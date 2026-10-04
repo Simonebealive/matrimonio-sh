@@ -1,0 +1,38 @@
+{
+  // Basis-Setup: eigenes Dockerfile + offizielles Claude Code Dev-Container-Feature
+  "name": "secure-claude-devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    // Node.js zuerst installieren: das Claude-Code-Feature braucht npm und
+    // hat zuvor versucht, Node selbst per apt nachzuinstallieren, was im
+    // Build fehlgeschlagen ist (ERROR: Node.js and npm are required ...).
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {}
+  },
+
+  // Claude Code läuft als Non-Root-User. Das ist u.a. Voraussetzung dafür,
+  // dass --dangerously-skip-permissions später überhaupt funktioniert.
+  "remoteUser": "vscode",
+
+  "mounts": [
+    // Persistente Claude-Code-Konfiguration (Login, Settings, Verlauf).
+    // ${devcontainerId} sorgt dafür, dass jedes Projekt sein eigenes Volume bekommt,
+    // statt ein gemeinsames Volume über alle Projekte zu teilen.
+    "source=claude-code-config-${devcontainerId},target=/home/vscode/.claude,type=volume",
+
+  ],
+
+  "containerEnv": {
+    // API-Key wird NICHT im Repo/Image gespeichert, sondern beim Start aus der
+    // Host-Umgebungsvariable ANTHROPIC_API_KEY übernommen. So überlebt der Key
+    // jeden Rebuild, ohne in einer Datei oder Image-Layer zu landen.
+    // Voraussetzung: Auf dem Host (Windows) einmalig setzen, z.B.
+    //   setx ANTHROPIC_API_KEY sk-ant-...
+    // danach VS Code neu starten, damit ${localEnv:...} den Wert sieht.
+    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+
+  }
+
+}
