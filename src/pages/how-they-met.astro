@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Heart from '../components/Heart.astro';
 import lake from '../assets/photos/story-lake.jpg';
-import portrait from '../assets/photos/story-portrait.jpg';
 import fence from '../assets/photos/story-fence.jpg';
 ---
 <Base title="How they met">
@@ -13,7 +12,6 @@ import fence from '../assets/photos/story-fence.jpg';
         <span class="script">It began with a zucchetti</span><br />
         <span class="display">— and it shall continue with carac.</span>
       </h1>
-      <div class="photo-top"><Image src={portrait} alt="Simone und Haris im Portrait" widths={[400, 800]} sizes="(min-width: 800px) 28vw, 100vw" /></div>
       <div class="photo-side"><Image src={lake} alt="Simone und Haris am See" widths={[400, 800]} sizes="(min-width: 800px) 35vw, 100vw" /></div>
       <div class="text"><p>Sommer 2020. Erstes Date. Hardbrücke.</p><p>Simone, frisch aus den Ferien in Canelli zurück, stand vor ihm mit einer Zucchetti in der Hand. Nicht Blumen, nicht Schokolade. Eine Zucchetti. Der Nachbar hatte gute Ernte, Caro eine super Idee und Simone war im Stress.</p></div>
     </section>

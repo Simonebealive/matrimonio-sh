@@ -84,7 +84,7 @@ result is the same in every visitor timezone.
 1. Scaffold Astro (minimal template), set `site` and `base`, add Fontsource packages.
 2. Extract photos from `input/Webseite-PDF.pdf` with `pdfimages` (poppler) or PyMuPDF
    (run Python with `-I`, output into `src/assets/photos/`). Name them by page and role
-   (`home-bouquet.jpg`, `story-lake.jpg`, `story-portrait.jpg`, `story-fence.jpg`,
+   (`home-bouquet.jpg`, `story-lake.jpg`, `story-fence.jpg`,
    `overview-chairs.jpg`, `overview-map.jpg`, `countdown-villa.jpg`, `lemons.png`, `flowers.png`).
 3. Write `global.css` tokens and `Base.astro` with `noindex` meta and Nav.
 4. Build the four pages with the mockup copy verbatim, Astro `<Image>` for photos.

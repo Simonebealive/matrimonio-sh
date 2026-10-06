@@ -16,14 +16,14 @@ const program = [
     <section class="hero" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;justify-items:stretch;text-align:left">
       <Image class="bg" src={chairs} alt="" widths={[768, 1366, 1800]} sizes="100vw" loading="eager" />
       <div style="grid-column:1/-1">
-        <h1><span class="script" style="font-size:clamp(2.6rem,9vw,5rem)">Overview</span><br /><span class="display" style="font-size:clamp(3rem,11vw,6rem)">wedding day</span></h1>
+        <h1><span class="script" style="font-size:clamp(5.2rem,18vw,10rem)">Overview</span><br /><span class="display" style="font-size:clamp(3rem,11vw,6rem)">wedding day</span></h1>
       </div>
       <div class="info-card">
         <p>Freitag, 07.05.2027, 15:00 Uhr</p>
         <p>I Tre Poggi · Strada Castagnole 10<br />14053 Canelli (AT) · Italien</p>
         <p>Ca. 35 Parkplätze vor Ort verfügbar</p>
       </div>
-      <div class="polaroid" style="max-width:20rem;justify-self:center;width:100%"><Image src={map} alt="Karte: I Tre Poggi, Canelli" /></div>
+      <div class="polaroid" style="max-width:20rem;justify-self:center;width:100%"><a href="https://www.google.com/maps/search/?api=1&query=I+Tre+Poggi+Strada+Castagnole+10+14053+Canelli" target="_blank" rel="noopener"><Image src={map} alt="Karte: I Tre Poggi, Canelli – in Google Maps öffnen" /></a></div>
     </section>
 
     <section class="know">
@@ -34,7 +34,7 @@ const program = [
         <p class="script quote">„Bold as Oranges, bright as Lemons"</p>
         <p class="small">Bunt, frisch, lebendig. Je fröhlicher, desto besser.<br />Ob Orange, Gelb oder jede andere frühlingshafte Farbe: alles willkommen. Einzige Ausnahme: Weiss bleibt der Braut vorbehalten.<br /><br />Don't be shy. Wirf dich in Schale und zeig dein schönstes Teil aus deinem Kleiderschrank.</p>
       </div>
-      <div style="display:grid;gap:2rem">
+      <div style="display:grid;gap:3rem">
         <div>
           <h3 class="display">Geschenke</h3>
           <p class="small">Eure Anwesenheit ist alles was wir uns wünschen. Dass ihr den Weg zu uns macht, bedeutet uns mehr als jedes Geschenk.</p>
@@ -46,14 +46,6 @@ const program = [
         </div>
       </div>
       <Image class="deco flowers" src={flowers} alt="" width={140} />
-      <div class="travel">
-        <h3 class="display">Anreise &amp; Unterkunft</h3>
-        <ul class="small todo">
-          <li>TODO: Anreise mit dem Auto</li>
-          <li>TODO: Anreise mit dem Zug / Flug</li>
-          <li>TODO: Unterkunft vor Ort und in der Nähe</li>
-        </ul>
-      </div>
     </section>
 
     <section class="hero program">
