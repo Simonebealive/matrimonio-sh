@@ -15,13 +15,12 @@ Date-driven constants: `WEDDING_AT` in `src/components/Countdown.astro`,
 
 ## Open points
 
-- External form URL (`FORM_URL` in `RegistrationLink.astro`, currently a placeholder).
-- Full-resolution original photos (current ones are extracted from the Canva PDF, same filenames in `src/assets/photos/`).
+- Full-resolution photos for Home, Overview and Countdown (the three "How they met" photos are already originals, resized to 2000 px).
 - Text for "Anreise & Unterkunft" (TODO lines in `src/pages/overview.astro`).
 
 ## Deviations from the Canva mockup
 
-- Valerie's phone number removed.
+- Valerie's phone number removed (her name stays in the countdown text).
 - "Anreise & Unterkunft" block added (placeholder).
 - Live counter added on the Countdown page.
 - Mobile layouts are new.
