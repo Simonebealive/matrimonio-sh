@@ -1,5 +1,7 @@
-input/node_modules/
+input/
+node_modules/
 dist/
 .astro/
 .DS_Store
-input/node_modules/
+input/
+node_modules/
