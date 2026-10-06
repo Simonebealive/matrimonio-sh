@@ -23,7 +23,7 @@ without manual edits after the RSVP deadline and after the wedding.
 | Removed | Valerie's phone number. Contact line keeps only "Simone". |
 | Visibility | Not indexed (`noindex` meta plus `robots.txt`). Open to anyone with the link. |
 | Stack | Astro, static output. |
-| Hosting | GitHub Pages via GitHub Actions. Address `simonebealive.github.io/matrimonio-sh`. |
+| Hosting | GitHub Pages via GitHub Actions. Address `simone-haris.github.io`. |
 | Photos | Extracted from the PDF now, committed to the repo. Originals swapped in later, same placement. |
 | Fonts | Free fonts, self-hosted via Fontsource. |
 | Copy | Inline in the four page files. No content layer. |

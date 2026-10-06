@@ -1,6 +1,6 @@
 # Simone & Haris – wedding website
 
-Astro, static output, deployed to GitHub Pages (`simonebealive.github.io/matrimonio-sh`).
+Astro, static output, deployed to GitHub Pages (`simone-haris.github.io`).
 
 ```
 npm install
