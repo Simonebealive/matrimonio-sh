@@ -1,0 +1,36 @@
+---
+const WEDDING_AT = '2027-05-07T15:00:00+02:00';
+---
+<div data-cd data-at={WEDDING_AT}>
+  <div class="counter" data-running aria-live="off">
+    <div><b data-d>–</b><span>Tage</span></div>
+    <div><b data-h>–</b><span>Std</span></div>
+    <div><b data-m>–</b><span>Min</span></div>
+    <div><b data-s>–</b><span>Sek</span></div>
+  </div>
+  <p class="script" data-today hidden style="font-size:clamp(3rem,12vw,7rem)">Oggi!</p>
+  <p class="script" data-after hidden style="font-size:clamp(2rem,8vw,4rem)">Grazie, dass ihr mit uns gefeiert habt.</p>
+</div>
+<script>
+  const root = document.querySelector<HTMLElement>('[data-cd]')!;
+  const at = new Date(root.dataset.at!).getTime();
+  const q = (s: string) => root.querySelector<HTMLElement>(s)!;
+  const day = (t: number) => new Date(t).toLocaleDateString('en-CA', { timeZone: 'Europe/Rome' });
+  const pad = (n: number) => String(n).padStart(2, '0');
+  function tick() {
+    const now = Date.now();
+    const diff = at - now;
+    const today = day(now) === day(at);
+    q('[data-running]').hidden = !(diff > 0 && !today);
+    q('[data-today]').hidden = !today;
+    q('[data-after]').hidden = !(now > at && !today);
+    if (diff > 0 && !today) {
+      q('[data-d]').textContent = String(Math.floor(diff / 864e5));
+      q('[data-h]').textContent = pad(Math.floor(diff / 36e5) % 24);
+      q('[data-m]').textContent = pad(Math.floor(diff / 6e4) % 60);
+      q('[data-s]').textContent = pad(Math.floor(diff / 1e3) % 60);
+    }
+  }
+  tick();
+  setInterval(tick, 1000);
+</script>

@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Heart from '../components/Heart.astro';
+import bouquet from '../assets/photos/home-bouquet.jpg';
+---
+<Base title="Home">
+  <main class="hero home">
+    <Image class="bg" src={bouquet} alt="" widths={[768, 1366, 1800]} sizes="100vw" loading="eager" />
+    <div>
+      <p class="date display">07.05.2027 <Heart /></p>
+      <h1 class="script">Simone &amp; Haris</h1>
+      <p class="place">I Tre Poggi · Canelli, Italia</p>
+    </div>
+  </main>
+</Base>

@@ -1,0 +1,17 @@
+---
+// TODO: replace with the real form URL
+const FORM_URL = 'https://example.com/anmeldeformular';
+const RSVP_DEADLINE = '2026-10-31T23:59:59+01:00';
+---
+<p class="small" data-rsvp data-deadline={RSVP_DEADLINE}>
+  <a class="btn" href={FORM_URL} target="_blank" rel="noopener" data-open>Zum Anmeldeformular</a>
+  <span data-open>Bitte bis am 31.10.2026 ausfüllen.</span>
+  <span data-closed hidden>Die Anmeldefrist ist abgelaufen. Bitte melde dich direkt bei Simone.</span>
+</p>
+<script>
+  const el = document.querySelector<HTMLElement>('[data-rsvp]');
+  if (el && Date.now() > new Date(el.dataset.deadline!).getTime()) {
+    el.querySelectorAll('[data-open]').forEach((n) => n.setAttribute('hidden', ''));
+    el.querySelector('[data-closed]')?.removeAttribute('hidden');
+  }
+</script>

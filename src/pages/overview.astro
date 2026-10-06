@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import RegistrationLink from '../components/RegistrationLink.astro';
+import chairs from '../assets/photos/overview-chairs.jpg';
+import map from '../assets/photos/overview-map.png';
+import lemons from '../assets/photos/lemons.png';
+import flowers from '../assets/photos/flowers.png';
+const program = [
+  ['15:00', 'Okupljanje'], ['16:00', 'Ceremonija'], ['17:00', 'Aperitiv i fotografisanje'],
+  ['18:00', 'Igre'], ['19:00', 'Večera'], ['21:00', 'Žurka'],
+];
+---
+<Base title="Overview">
+  <main>
+    <section class="hero" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;justify-items:stretch;text-align:left">
+      <Image class="bg" src={chairs} alt="" widths={[768, 1366, 1800]} sizes="100vw" loading="eager" />
+      <div style="grid-column:1/-1">
+        <h1><span class="script" style="font-size:clamp(2.6rem,9vw,5rem)">Overview</span><br /><span class="display" style="font-size:clamp(3rem,11vw,6rem)">wedding day</span></h1>
+      </div>
+      <div class="info-card">
+        <p>Freitag, 07.05.2027, 15:00 Uhr</p>
+        <p>I Tre Poggi · Strada Castagnole 10<br />14053 Canelli (AT) · Italien</p>
+        <p>Ca. 35 Parkplätze vor Ort verfügbar</p>
+      </div>
+      <div class="polaroid" style="max-width:20rem;justify-self:center;width:100%"><Image src={map} alt="Karte: I Tre Poggi, Canelli" /></div>
+    </section>
+
+    <section class="know">
+      <Image class="deco lemons" src={lemons} alt="" width={320} />
+      <h2 class="display">Gut zu wissen</h2>
+      <div>
+        <h3 class="display">Dresscode</h3>
+        <p class="script quote">„Bold as Oranges, bright as Lemons"</p>
+        <p class="small">Bunt, frisch, lebendig. Je fröhlicher, desto besser.<br />Ob Orange, Gelb oder jede andere frühlingshafte Farbe: alles willkommen. Einzige Ausnahme: Weiss bleibt der Braut vorbehalten.<br /><br />Don't be shy. Wirf dich in Schale und zeig dein schönstes Teil aus deinem Kleiderschrank.</p>
+      </div>
+      <div style="display:grid;gap:2rem">
+        <div>
+          <h3 class="display">Geschenke</h3>
+          <p class="small">Eure Anwesenheit ist alles was wir uns wünschen. Dass ihr den Weg zu uns macht, bedeutet uns mehr als jedes Geschenk.</p>
+        </div>
+        <div>
+          <h3 class="display">Anmeldeformular</h3>
+          <svg viewBox="0 0 120 90" width="120" role="img" aria-label="Checkliste" style="margin:0.5rem 0"><path d="M30 6h80l-14 78H16z" fill="#fff"/><g fill="none" stroke="#1d1d1d" stroke-width="2.500"><rect x="30" y="20" width="8" height="8"/><rect x="26" y="40" width="8" height="8" fill="#fbea9b"/><rect x="22" y="60" width="8" height="8"/><path d="M46 24h40M42 44h40M38 64h40"/></g></svg>
+          <RegistrationLink />
+        </div>
+      </div>
+      <Image class="deco flowers" src={flowers} alt="" width={140} />
+      <div class="travel">
+        <h3 class="display">Anreise &amp; Unterkunft</h3>
+        <ul class="small todo">
+          <li>TODO: Anreise mit dem Auto</li>
+          <li>TODO: Anreise mit dem Zug / Flug</li>
+          <li>TODO: Unterkunft vor Ort und in der Nähe</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="hero program">
+      <Image class="bg" src={chairs} alt="" widths={[768, 1366, 1800]} sizes="100vw" />
+      <div>
+        <h2 class="display">Program</h2>
+        <div class="info-card"><ul>{program.map(([t, l]) => <li><span class="t">{t}</span><span>{l}</span></li>)}</ul></div>
+      </div>
+    </section>
+  </main>
+</Base>
