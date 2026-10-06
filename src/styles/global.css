@@ -134,7 +134,7 @@ a { color: inherit; }
 }
 .know .lemons { top: 0; left: 0; width: min(22vw, 240px); }
 .know .flowers { right: 0; bottom: 0; width: min(22vw, 140px); }
-.know [data-rsvp] span { display: block; margin-top: 1rem; }
+.know [data-rsvp] span:not([hidden]) { display: block; margin-top: 1rem; }
 @media (max-width: 799px) {
   .know .deco { display: none; }
   .know { padding-top: 2.5rem; }
