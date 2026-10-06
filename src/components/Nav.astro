@@ -1,0 +1,16 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const links = [
+  ['Home', '/'],
+  ['How they met', '/how-they-met/'],
+  ['Overview', '/overview/'],
+  ['Countdown', '/countdown/'],
+];
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const current = (href: string) => path === (base + href).replace(/\/$/, '') || (base + href) === path + '/';
+---
+<nav class="nav" aria-label="Hauptnavigation">
+  {links.map(([label, href]) => (
+    <a href={base + href} aria-current={current(href) ? 'page' : undefined}>{label}</a>
+  ))}
+</nav>

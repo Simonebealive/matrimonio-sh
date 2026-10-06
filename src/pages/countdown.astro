@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Countdown from '../components/Countdown.astro';
+import villa from '../assets/photos/countdown-villa.jpg';
+---
+<Base title="Countdown">
+  <main class="hero cd">
+    <Image class="bg" src={villa} alt="" widths={[768, 1366, 1800]} sizes="100vw" loading="eager" />
+    <div>
+      <h1 class="script">Non possiamo vedere l'ora.</h1>
+      <Countdown />
+      <p class="contact">Bei Fragen ist Simone gerne für euch da.</p>
+    </div>
+  </main>
+</Base>

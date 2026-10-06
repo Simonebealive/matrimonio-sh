@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Heart from '../components/Heart.astro';
+import lake from '../assets/photos/story-lake.jpg';
+import portrait from '../assets/photos/story-portrait.jpg';
+import fence from '../assets/photos/story-fence.jpg';
+---
+<Base title="How they met">
+  <main>
+    <section class="story-block slate a">
+      <h1 class="story-title">
+        <span class="script">It began with a zucchetti</span><br />
+        <span class="display">— and it shall continue with carac.</span>
+      </h1>
+      <div class="photo-top"><Image src={portrait} alt="Simone und Haris im Portrait" widths={[400, 800]} sizes="(min-width: 800px) 28vw, 100vw" /></div>
+      <div class="photo-side"><Image src={lake} alt="Simone und Haris am See" widths={[400, 800]} sizes="(min-width: 800px) 35vw, 100vw" /></div>
+      <div class="text"><p>Sommer 2020. Erstes Date. Hardbrücke.</p><p>Simone, frisch aus den Ferien in Canelli zurück, stand vor ihm mit einer Zucchetti in der Hand. Nicht Blumen, nicht Schokolade. Eine Zucchetti. Der Nachbar hatte gute Ernte, Caro eine super Idee und Simone war im Stress.</p></div>
+    </section>
+    <section class="story-block orange b">
+      <div class="text"><p>Haris fand sie trotzdem charmant. Oder vielleicht genau deswegen.</p><p>Auf dem Date wurde auf jeden Fall viel geredet, spaziert, gelacht und die Zeit vergessen. Als ob sie beide schon wussten, dass da etwas ist.<br />Und wie es endete? Das ist eine Geschichte für sich - irgendwo zwischen Contact Tracing, einem Schlüssel und einer Nacht, die fast obdachlos geendet hätte. Fragt ruhig nach. Aber Achtung je nachdem wen ihr fragt, bekommt ihr eine andere Version.</p><p>Sechs Jahre, unzählige gemeinsame Momente und ein Rätsel an der norwegischen Küste später, feiern wir in Canelli diese Liebe. Dort, wo die Zucchetti herkam.</p></div>
+      <Image src={fence} alt="Simone und Haris lachend" widths={[500, 900]} sizes="(min-width: 800px) 50vw, 100vw" />
+      <div class="hearts" aria-hidden="true">{Array.from({ length: 8 }, () => <Heart />)}</div>
+    </section>
+  </main>
+</Base>

@@ -1,0 +1,20 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>{title} · Simone & Haris</title>
+    <link rel="icon" type="image/svg+xml" href={base + '/favicon.svg'} />
+  </head>
+  <body>
+    <Nav />
+    <slot />
+  </body>
+</html>
