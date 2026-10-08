@@ -91,6 +91,7 @@ a { color: inherit; }
 .know h3 { font-size: clamp(2rem, 7vw, 3rem); }
 .know .quote { font-size: clamp(1.8rem, 6vw, 2.6rem); margin: 0.25rem 0 1rem; }
 .know .small { font-size: 0.95rem; }
+.know h3 + .small { margin-top: 1rem; }
 .know .deco { position: absolute; pointer-events: none; }
 .todo { opacity: 0.75; font-style: italic; }
 .btn {
@@ -107,7 +108,7 @@ a { color: inherit; }
 
 /* Countdown */
 .cd h1 { font-size: clamp(2.8rem, 11vw, 8rem); }
-.cd .counter { display: flex; gap: clamp(0.75rem, 3vw, 2rem); justify-content: center; margin: 1.5rem 0; font-family: var(--serif); font-weight: 700; }
+.cd .counter { display: flex; gap: clamp(0.75rem, 3vw, 2rem); justify-content: center; margin: 1.5rem 0 3rem; font-family: var(--serif); font-weight: 700; }
 .cd .counter div { display: grid; }
 .cd .counter b { font-size: clamp(2rem, 9vw, 4.5rem); line-height: 1; font-variant-numeric: tabular-nums; }
 .cd .counter span { font-family: var(--body); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
